@@ -4,14 +4,14 @@ const categorySchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
-        unique:true
+        unique: true
     },
     description: {
         type: String,
         required: true
     },
     isListed: {
-        type: String,
+        type: Boolean,
         required: true
     },
     categoryOffer: {
@@ -24,6 +24,6 @@ const categorySchema = new mongoose.Schema({
     }
 })
 
-const category = mongoose.model('category', categorySchema)
+const Category = mongoose.model('Category', categorySchema)
 
-module.exports = category
+module.exports = Category

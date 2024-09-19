@@ -4,17 +4,17 @@ const env = require('dotenv').config()
 const path = require('path')
 const db = require('./config/db')
 const session = require('express-session')
-const bodyparser = require('body-parser')
-const cors = require('cors')
+// const bodyparser = require('body-parser')
+// const cors = require('cors')
 const passport = require('./config/passport')
 const userRoutes = require('./routes/userRoutes')
 const adminRoutes = require('./routes/adminRoutes')
 db()
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(bodyparser.json())
-app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// app.use(bodyparser.json())
+// app.use(cors())
 
 app.use(session({
     secret: process.env.SECRET_KEY,
